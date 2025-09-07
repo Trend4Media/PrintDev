@@ -4,7 +4,17 @@ import { ArrowRight, Zap, Package, Clock } from "lucide-react";
 export const Hero = () => {
   return (
     <section className="relative min-h-screen bg-gradient-hero flex items-center overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-printdev-teal/20 to-printdev-cyan/20"></div>
+      {/* Enhanced Background Layers */}
+      <div className="absolute inset-0 bg-gradient-to-br from-printdev-teal/10 via-printdev-cyan/15 to-printdev-orange/10"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,hsl(var(--printdev-teal)/0.15),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,hsl(var(--printdev-cyan)/0.12),transparent_50%)]"></div>
+      
+      {/* Geometric Patterns */}
+      <div className="absolute top-0 left-0 w-full h-full opacity-30">
+        <div className="absolute top-20 left-20 w-32 h-32 border border-white/20 rounded-full animate-pulse-glow"></div>
+        <div className="absolute bottom-32 right-32 w-24 h-24 border-2 border-printdev-teal/30 rotate-45"></div>
+        <div className="absolute top-1/3 right-20 w-16 h-16 bg-gradient-to-r from-printdev-cyan/20 to-transparent rounded-lg rotate-12"></div>
+      </div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
