@@ -47,6 +47,12 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        printdev: {
+          pink: "hsl(var(--printdev-pink))",
+          orange: "hsl(var(--printdev-orange))",
+          cyan: "hsl(var(--printdev-cyan))",
+          teal: "hsl(var(--printdev-teal))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -62,6 +68,16 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      backgroundImage: {
+        "gradient-brand": "var(--gradient-brand)",
+        "gradient-hero": "var(--gradient-hero)", 
+        "gradient-card": "var(--gradient-card)",
+      },
+      boxShadow: {
+        "brand": "var(--shadow-brand)",
+        "card-custom": "var(--shadow-card)",
+        "button": "var(--shadow-button)",
       },
       keyframes: {
         "accordion-down": {
@@ -80,10 +96,24 @@ export default {
             height: "0",
           },
         },
+        "float": {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
+        "pulse-glow": {
+          "0%, 100%": { 
+            boxShadow: "0 0 20px hsl(var(--printdev-cyan) / 0.5)" 
+          },
+          "50%": { 
+            boxShadow: "0 0 30px hsl(var(--printdev-cyan) / 0.8)" 
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "float": "float 3s ease-in-out infinite",
+        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
       },
     },
   },
