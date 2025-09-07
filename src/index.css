@@ -36,15 +36,15 @@ All colors MUST be HSL.
     --input: 200 20% 95%;
     --ring: 180 100% 50%;
 
-    /* Printdev brand colors */
-    --printdev-pink: 320 100% 60%;
-    --printdev-orange: 30 100% 60%;
-    --printdev-cyan: 180 100% 50%;
-    --printdev-teal: 200 50% 15%;
+    /* Printdev brand colors - subtle professional theme */
+    --printdev-pink: 330 30% 45%;
+    --printdev-orange: 25 40% 40%; 
+    --printdev-cyan: 189 35% 40%;
+    --printdev-teal: 173 25% 35%;
     
     /* Gradients */
-    --gradient-brand: linear-gradient(135deg, hsl(var(--printdev-pink)), hsl(var(--printdev-orange)), hsl(var(--printdev-cyan)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--printdev-teal)), hsl(var(--printdev-cyan)));
+    --gradient-brand: linear-gradient(135deg, hsl(var(--printdev-teal)), hsl(var(--printdev-cyan)));
+    --gradient-hero: linear-gradient(135deg, hsl(220 15% 20%), hsl(220 15% 28%));
     --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(200 20% 98%));
     
     /* Shadows */

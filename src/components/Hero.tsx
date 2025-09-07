@@ -12,15 +12,15 @@ export const Hero = () => {
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
               DTF Druck &{" "}
               <span className="bg-gradient-brand bg-clip-text text-transparent">
-                Fulfillment
+                Versand
               </span>
               <br />
-              Lösungen
+              Service
             </h1>
             
             <p className="text-xl text-white/90 mb-8 max-w-2xl">
-              Professionelle DTF-Drucke in Rekordzeit und vollständige Fulfillment-Services 
-              für Ihren Erfolg. Von der Idee bis zur Lieferung - alles aus einer Hand.
+              Professionelle DTF-Drucke in höchster Qualität mit schnellem Versand direkt zu Ihnen. 
+              Einfach, zuverlässig und termingerecht.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -44,11 +44,11 @@ export const Hero = () => {
               </div>
               
               <div className="text-center">
-                <div className="bg-printdev-pink/20 rounded-full p-4 w-16 h-16 flex items-center justify-center mx-auto mb-3">
-                  <Package className="text-printdev-pink" size={24} />
+                <div className="bg-printdev-teal/20 rounded-full p-4 w-16 h-16 flex items-center justify-center mx-auto mb-3">
+                  <Package className="text-printdev-teal" size={24} />
                 </div>
-                <h3 className="text-white font-semibold mb-1">Komplettes Fulfillment</h3>
-                <p className="text-white/80 text-sm">Lagerung bis Versand</p>
+                <h3 className="text-white font-semibold mb-1">Direktversand</h3>
+                <p className="text-white/80 text-sm">Schnell zu Ihnen</p>
               </div>
               
               <div className="text-center">
@@ -76,7 +76,7 @@ export const Hero = () => {
                   </li>
                   <li className="flex items-center text-white">
                     <div className="w-2 h-2 bg-gradient-brand rounded-full mr-3"></div>
-                    Vollständige Lager- und Versandlösung
+                    Express-Versand deutschlandweit
                   </li>
                   <li className="flex items-center text-white">
                     <div className="w-2 h-2 bg-gradient-brand rounded-full mr-3"></div>

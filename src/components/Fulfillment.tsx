@@ -9,38 +9,40 @@ export const Fulfillment = () => {
     <section id="fulfillment" className="py-20 bg-gradient-to-b from-secondary/50 to-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <Badge className="mb-4 bg-printdev-pink text-white">FULFILLMENT</Badge>
-          <h2 className="text-4xl font-bold mb-4">Komplette Fulfillment-Lösungen</h2>
+          <Badge className="mb-4 bg-printdev-teal text-white">VERSAND</Badge>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Versand Services
+          </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Von der Planung bis zur Lieferung - mit über 4000m² Lager, 80 Mitarbeitern 
-            und verschiedensten Produktionsverfahren holen wir alles aus Ihren Ideen raus.
+            Schneller und zuverlässiger Versand Ihrer DTF-Drucke 
+            direkt nach der Produktion - deutschlandweit und international.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           <div>
-            <h3 className="text-2xl font-bold mb-6">Ihr Partner für den Erfolg</h3>
+            <h3 className="text-2xl font-bold mb-6">Ihr Versandpartner</h3>
             <p className="text-muted-foreground mb-6">
-              Sie suchen einen Partner, der nicht nur Ihr Motiv kreativ umsetzt, sondern Sie als 
-              kompetenter Partner in allen Belangen zur Seite steht? Dann sind Sie bei uns richtig.
+              Sie suchen einen zuverlässigen Partner für den Versand Ihrer DTF-Drucke? 
+              Wir kümmern uns um sichere Verpackung und schnellen Versand weltweit.
             </p>
             
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-gradient-brand rounded-full"></div>
-                <span>Produktberatung und Markenaufbau</span>
+                <span>Professionelle Verpackung</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-gradient-brand rounded-full"></div>
-                <span>Lagerung und Konfektionierung</span>
+                <span>Express-Versand deutschlandweit</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-gradient-brand rounded-full"></div>
-                <span>Onlineshop-Aufbau und Abwicklung</span>
+                <span>Internationaler Versand</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-gradient-brand rounded-full"></div>
-                <span>Vollständiges Verteilungsmanagement</span>
+                <span>Sendungsverfolgung inklusive</span>
               </div>
             </div>
           </div>

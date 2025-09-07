@@ -11,7 +11,8 @@ export const Services = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Unsere Services</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Von DTF-Drucken bis zum kompletten Fulfillment - wir bieten alles für Ihren Erfolg
+            Professioneller DTF-Druck mit zuverlässigem Versand - 
+            qualitativ hochwertig und termingerecht.
           </p>
         </div>
 
@@ -58,23 +59,23 @@ export const Services = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-printdev-pink/80 to-transparent"></div>
               <div className="absolute bottom-4 left-4 right-4">
-                <h3 className="text-2xl font-bold text-white mb-2">Fulfillment</h3>
-                <p className="text-white/90 text-sm">Komplette Lager- und Versandlösungen</p>
+                <h3 className="text-2xl font-bold text-white mb-2">Versand Service</h3>
+                <p className="text-white/90 text-sm">Schneller und sicherer Versand</p>
               </div>
             </div>
             <div className="p-6">
               <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="flex items-center space-x-2">
-                  <Package className="text-printdev-pink" size={20} />
-                  <span className="text-sm">Lagerung</span>
+                  <Package className="text-printdev-teal" size={20} />
+                  <span className="text-sm">Verpackung</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Truck className="text-printdev-pink" size={20} />
-                  <span className="text-sm">Versand</span>
+                  <Truck className="text-printdev-teal" size={20} />
+                  <span className="text-sm">Express-Versand</span>
                 </div>
               </div>
-              <Button variant="quote" className="w-full" asChild>
-                <a href="#fulfillment">Fulfillment Services</a>
+              <Button variant="cyan" className="w-full" asChild>
+                <a href="#fulfillment">Versand Services</a>
               </Button>
             </div>
           </Card>
@@ -98,7 +99,7 @@ export const Services = () => {
             </div>
             <h3 className="font-bold mb-2">Komplettlösung</h3>
             <p className="text-muted-foreground text-sm">
-              Von der Produktion bis zum Onlineshop-Aufbau - alles aus einer Hand
+              Von der Produktion bis zum Versand - alles aus einer Hand
             </p>
           </Card>
 
@@ -108,7 +109,7 @@ export const Services = () => {
             </div>
             <h3 className="font-bold mb-2">Skalierbarkeit</h3>
             <p className="text-muted-foreground text-sm">
-              4000m² Lager, 80 Mitarbeiter - bereit für Ihr Wachstum
+              Flexibel skalierbare Versandlösungen für Ihr Wachstum
             </p>
           </Card>
         </div>
