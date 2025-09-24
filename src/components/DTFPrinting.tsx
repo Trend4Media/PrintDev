@@ -65,52 +65,61 @@ export const DTFPrinting = () => {
         </div>
 
         {/* Product Cards */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
-          <Card className="p-6 bg-gradient-card shadow-card-custom hover:shadow-brand transition-all duration-300">
-            <div className="text-center mb-4">
-              <Ruler className="mx-auto mb-3 text-printdev-cyan" size={32} />
-              <h3 className="font-bold text-lg">DTF Transfer Freie Größe</h3>
+        {/* Service Cards */}
+        <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-4xl mx-auto">
+          <Card className="p-8 bg-gradient-card shadow-card-custom hover:shadow-brand transition-all duration-300">
+            <div className="text-center mb-6">
+              <Ruler className="mx-auto mb-4 text-printdev-cyan" size={40} />
+              <h3 className="font-bold text-xl">DTF Transfer Freie Größe</h3>
             </div>
-            <ul className="space-y-2 text-sm text-muted-foreground mb-6">
-              <li>• Keine Größenbeschränkung</li>
-              <li>• Automatische Preisberechnung</li>
-              <li>• Perfekt für individuelle Motive</li>
-              <li>• Weich und elastisch</li>
+            <ul className="space-y-3 text-sm text-muted-foreground mb-8">
+              <li className="flex items-center space-x-2">
+                <CheckCircle className="text-printdev-cyan" size={16} />
+                <span>Keine Größenbeschränkung</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <CheckCircle className="text-printdev-cyan" size={16} />
+                <span>Automatische Preisberechnung</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <CheckCircle className="text-printdev-cyan" size={16} />
+                <span>Perfekt für individuelle Motive</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <CheckCircle className="text-printdev-cyan" size={16} />
+                <span>Weich und elastisch</span>
+              </li>
             </ul>
-            <Button variant="cyan" className="w-full">
-              Preise berechnen
+            <Button variant="cyan" size="lg" className="w-full" asChild>
+              <a href="#/angebot">Preise berechnen</a>
             </Button>
           </Card>
 
-          <Card className="p-6 bg-gradient-card shadow-card-custom hover:shadow-brand transition-all duration-300">
-            <div className="text-center mb-4">
-              <FileText className="mx-auto mb-3 text-printdev-orange" size={32} />
-              <h3 className="font-bold text-lg">DTF Transfer DIN A4</h3>
+          <Card className="p-8 bg-gradient-card shadow-card-custom hover:shadow-brand transition-all duration-300">
+            <div className="text-center mb-6">
+              <Zap className="mx-auto mb-4 text-printdev-pink" size={40} />
+              <h3 className="font-bold text-xl">DTF Express</h3>
             </div>
-            <ul className="space-y-2 text-sm text-muted-foreground mb-6">
-              <li>• Standard A4 Format (210x297mm)</li>
-              <li>• Optimiert für T-Shirts</li>
-              <li>• Beste Preis-Leistung</li>
-              <li>• Schnelle Bearbeitung</li>
+            <ul className="space-y-3 text-sm text-muted-foreground mb-8">
+              <li className="flex items-center space-x-2">
+                <CheckCircle className="text-printdev-pink" size={16} />
+                <span>Lieferung in 24-48h</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <CheckCircle className="text-printdev-pink" size={16} />
+                <span>Für dringende Aufträge</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <CheckCircle className="text-printdev-pink" size={16} />
+                <span>Gleiche Qualität</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <CheckCircle className="text-printdev-pink" size={16} />
+                <span>Prioritätsbehandlung</span>
+              </li>
             </ul>
-            <Button variant="teal" className="w-full">
-              A4 bestellen
-            </Button>
-          </Card>
-
-          <Card className="p-6 bg-gradient-card shadow-card-custom hover:shadow-brand transition-all duration-300">
-            <div className="text-center mb-4">
-              <Zap className="mx-auto mb-3 text-printdev-pink" size={32} />
-              <h3 className="font-bold text-lg">DTF Express</h3>
-            </div>
-            <ul className="space-y-2 text-sm text-muted-foreground mb-6">
-              <li>• Lieferung in 24-48h</li>
-              <li>• Für dringende Aufträge</li>
-              <li>• Gleiche Qualität</li>
-              <li>• Prioritätsbehandlung</li>
-            </ul>
-            <Button variant="quote" className="w-full">
-              Express anfragen
+            <Button variant="quote" size="lg" className="w-full" asChild>
+              <a href="#/angebot">Express anfragen</a>
             </Button>
           </Card>
         </div>
