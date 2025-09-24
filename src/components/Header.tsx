@@ -11,9 +11,9 @@ export const Header = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-2">
             <img 
-              src="/logo.jpg" 
+              src="/LOGO Entwurf.jpg" 
               alt="Printdev Logo" 
-              className="h-8 w-auto object-contain"
+              className="h-10 w-auto object-contain"
               onError={(e) => {
                 // Fallback to existing logo if new logo fails to load
                 e.currentTarget.src = "/lovable-uploads/8b5cd286-e45e-4ffe-ad31-88b3d4a31ee1.png";
