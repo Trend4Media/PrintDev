@@ -77,7 +77,7 @@ export const Footer = () => {
               </div>
             </div>
             <Button variant="quote" size="sm" className="mt-4 w-full" asChild>
-              <a href="/angebot">Angebot anfordern</a>
+              <a href="#/angebot">Angebot anfordern</a>
             </Button>
           </div>
         </div>

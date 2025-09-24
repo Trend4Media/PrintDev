@@ -14,7 +14,7 @@ const Angebot = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center mb-6">
             <Button variant="ghost" size="sm" asChild className="mr-4">
-              <a href="/" className="flex items-center space-x-2 text-gray-600 hover:text-printdev-cyan">
+              <a href="#/" className="flex items-center space-x-2 text-gray-600 hover:text-printdev-cyan">
                 <ArrowLeft size={16} />
                 <span>Zurück zur Startseite</span>
               </a>

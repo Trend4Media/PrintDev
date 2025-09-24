@@ -34,7 +34,7 @@ export const Header = () => {
               Kontakt
             </a>
             <Button variant="quote" size="sm" asChild>
-              <a href="/angebot">Angebot anfordern</a>
+              <a href="#/angebot">Angebot anfordern</a>
             </Button>
           </nav>
 
@@ -73,7 +73,7 @@ export const Header = () => {
                 Kontakt
               </a>
               <Button variant="quote" size="sm" className="w-fit" asChild>
-                <a href="/angebot" onClick={() => setIsMenuOpen(false)}>
+                <a href="#/angebot" onClick={() => setIsMenuOpen(false)}>
                   Angebot anfordern
                 </a>
               </Button>
