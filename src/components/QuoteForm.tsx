@@ -73,9 +73,7 @@ export const QuoteForm = () => {
                     <SelectValue placeholder="Service auswählen" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="dtf-printing">DTF Printing</SelectItem>
-                    <SelectItem value="fulfillment">Fulfillment Services</SelectItem>
-                    <SelectItem value="both">DTF + Fulfillment Kombination</SelectItem>
+                    <SelectItem value="dtf-printing">DTF Druck</SelectItem>
                     <SelectItem value="consultation">Beratungsgespräch</SelectItem>
                   </SelectContent>
                 </Select>

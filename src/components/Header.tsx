@@ -30,9 +30,6 @@ export const Header = () => {
             <a href="#dtf-printing" className="text-gray-700 hover:text-printdev-cyan transition-colors font-medium">
               DTF Printing
             </a>
-            <a href="#fulfillment" className="text-gray-700 hover:text-printdev-cyan transition-colors font-medium">
-              Fulfillment
-            </a>
             <a href="#contact" className="text-gray-700 hover:text-printdev-cyan transition-colors font-medium">
               Kontakt
             </a>
@@ -67,13 +64,6 @@ export const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 DTF Printing
-              </a>
-              <a 
-                href="#fulfillment" 
-                className="text-gray-700 hover:text-printdev-cyan transition-colors font-medium"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Fulfillment
               </a>
               <a 
                 href="#contact" 
