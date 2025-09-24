@@ -1,73 +1,74 @@
-# Welcome to your Lovable project
+# PrintDev
 
-## Project info
+Eine moderne React-Anwendung mit Vite, TypeScript und Tailwind CSS.
 
-**URL**: https://lovable.dev/projects/30694bfa-ece5-4727-be01-26b6e233f806
+## 🚀 GitHub Pages Deployment
 
-## How can I edit this code?
+Diese Anwendung ist automatisch für GitHub Pages konfiguriert und wird unter folgender URL bereitgestellt:
+**https://trend4media.github.io/PrintDev/**
 
-There are several ways of editing your application.
+### Automatisches Deployment
 
-**Use Lovable**
+Das Deployment erfolgt automatisch über GitHub Actions bei jedem Push auf den `main` Branch:
+- ✅ Vite Build-Konfiguration optimiert für GitHub Pages
+- ✅ Automatischer GitHub Actions Workflow 
+- ✅ Jekyll deaktiviert (`.nojekyll` Datei)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/30694bfa-ece5-4727-be01-26b6e233f806) and start prompting.
+## 🛠️ Lokale Entwicklung
 
-Changes made via Lovable will be committed automatically to this repo.
+```bash
+# Dependencies installieren
+npm install
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Development Server starten
 npm run dev
+
+# Production Build erstellen
+npm run build
+
+# Build-Vorschau
+npm run preview
 ```
 
-**Edit a file directly in GitHub**
+## 📦 Technologie-Stack
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- **React 18** - UI Framework
+- **TypeScript** - Typisierte JavaScript-Superset
+- **Vite** - Build Tool und Development Server
+- **Tailwind CSS** - Utility-first CSS Framework
+- **ShadCN/UI** - UI Component Library
+- **React Router** - Client-side Routing
+- **React Hook Form** - Formular-Management
+- **Zod** - Schema-Validierung
 
-**Use GitHub Codespaces**
+## 🔧 GitHub Pages Konfiguration
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Die Anwendung ist bereits vollständig für GitHub Pages konfiguriert:
 
-## What technologies are used for this project?
+1. **Vite-Konfiguration** (`vite.config.ts`):
+   - Base path auf `/PrintDev/` gesetzt
+   - Optimierte Build-Einstellungen
 
-This project is built with:
+2. **GitHub Actions Workflow** (`.github/workflows/deploy.yml`):
+   - Automatisches Build und Deployment
+   - Node.js 18 Setup
+   - Artifact Upload und Pages Deployment
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+3. **Jekyll deaktiviert** (`.nojekyll`):
+   - Verhindert Jekyll-Verarbeitung
+   - Ermöglicht korrekte Asset-Verarbeitung
 
-## How can I deploy this project?
+## 📋 GitHub Pages Setup-Anleitung
 
-Simply open [Lovable](https://lovable.dev/projects/30694bfa-ece5-4727-be01-26b6e233f806) and click on Share -> Publish.
+Folgen Sie diesen Schritten, um GitHub Pages zu aktivieren:
 
-## Can I connect a custom domain to my Lovable project?
+1. **Gehen Sie zu den Repository-Einstellungen**
+2. **Navigieren Sie zu "Pages"**
+3. **Wählen Sie unter "Source": "GitHub Actions"**
+4. **Speichern Sie die Einstellungen**
 
-Yes, you can!
+Nach dem nächsten Push auf `main` wird die Website automatisch unter `https://trend4media.github.io/PrintDev/` verfügbar sein.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+*Erstellt mit Lovable.dev - [Projekt-Link](https://lovable.dev/projects/30694bfa-ece5-4727-be01-26b6e233f806)*
