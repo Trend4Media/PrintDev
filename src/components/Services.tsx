@@ -58,34 +58,24 @@ export const Services = () => {
         </div>
 
         {/* Feature Grid */}
-        <div className="grid md:grid-cols-3 gap-6">
-          <Card className="p-6 text-center bg-gradient-card shadow-card-custom hover:shadow-brand transition-all duration-300">
-            <div className="bg-printdev-cyan/10 rounded-full p-4 w-16 h-16 flex items-center justify-center mx-auto mb-4">
-              <Users className="text-printdev-cyan" size={24} />
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <Card className="p-8 text-center bg-gradient-card shadow-card-custom hover:shadow-brand transition-all duration-300">
+            <div className="bg-printdev-cyan/10 rounded-full p-6 w-20 h-20 flex items-center justify-center mx-auto mb-6">
+              <Users className="text-printdev-cyan" size={32} />
             </div>
-            <h3 className="font-bold mb-2">Produktberatung</h3>
-            <p className="text-muted-foreground text-sm">
+            <h3 className="font-bold text-xl mb-4">Produktberatung</h3>
+            <p className="text-muted-foreground">
               Langjährige Erfahrung in Gestaltung, Material und Markenaufbau
             </p>
           </Card>
 
-          <Card className="p-6 text-center bg-gradient-card shadow-card-custom hover:shadow-brand transition-all duration-300">
-            <div className="bg-printdev-orange/10 rounded-full p-4 w-16 h-16 flex items-center justify-center mx-auto mb-4">
-              <Settings className="text-printdev-orange" size={24} />
+          <Card className="p-8 text-center bg-gradient-card shadow-card-custom hover:shadow-brand transition-all duration-300">
+            <div className="bg-printdev-pink/10 rounded-full p-6 w-20 h-20 flex items-center justify-center mx-auto mb-6">
+              <BarChart3 className="text-printdev-pink" size={32} />
             </div>
-            <h3 className="font-bold mb-2">Komplettlösung</h3>
-            <p className="text-muted-foreground text-sm">
-              Von der Produktion bis zum Versand - alles aus einer Hand
-            </p>
-          </Card>
-
-          <Card className="p-6 text-center bg-gradient-card shadow-card-custom hover:shadow-brand transition-all duration-300">
-            <div className="bg-printdev-pink/10 rounded-full p-4 w-16 h-16 flex items-center justify-center mx-auto mb-4">
-              <BarChart3 className="text-printdev-pink" size={24} />
-            </div>
-            <h3 className="font-bold mb-2">Skalierbarkeit</h3>
-            <p className="text-muted-foreground text-sm">
-              Flexibel skalierbare Versandlösungen für Ihr Wachstum
+            <h3 className="font-bold text-xl mb-4">Skalierbarkeit</h3>
+            <p className="text-muted-foreground">
+              Flexibel skalierbare DTF-Lösungen für Ihr Wachstum
             </p>
           </Card>
         </div>
