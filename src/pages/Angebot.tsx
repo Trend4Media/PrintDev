@@ -3,10 +3,17 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useAnalytics } from "@/hooks/useAnalytics";
 import { useEffect } from "react";
 
 const Angebot = () => {
+  const { trackPageVisit } = useAnalytics();
+
   useEffect(() => {
+    // Track page visit
+    trackPageVisit('/angebot');
+    
+    // SEO: Update page title and meta description for quote page
     // SEO: Update page title and meta description for quote page
     document.title = "DTF Druck Angebot anfordern | PrintDev - Kostenloses Angebot";
     

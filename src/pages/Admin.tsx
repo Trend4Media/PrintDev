@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
+import { AnalyticsDashboard } from "@/components/AnalyticsDashboard";
 import { 
   Lock, 
   Settings, 
@@ -17,7 +18,8 @@ import {
   Home,
   FileText,
   Users,
-  Phone
+  Phone,
+  BarChart3
 } from "lucide-react";
 
 const AdminLogin = () => {
@@ -86,9 +88,10 @@ const AdminDashboard = () => {
     logout 
   } = useAdmin();
 
-  const [activeTab, setActiveTab] = useState("hero");
+  const [activeTab, setActiveTab] = useState("analytics");
 
   const tabs = [
+    { id: "analytics", label: "Statistiken", icon: BarChart3 },
     { id: "hero", label: "Hero Bereich", icon: Home },
     { id: "services", label: "Services", icon: Settings },
     { id: "dtf", label: "DTF Printing", icon: FileText },
@@ -161,8 +164,11 @@ const AdminDashboard = () => {
 
           {/* Content Editor */}
           <div className="lg:col-span-3">
-            <Card className="p-6">
-              {activeTab === "hero" && (
+            {activeTab === "analytics" && <AnalyticsDashboard />}
+            
+            {activeTab !== "analytics" && (
+              <Card className="p-6">
+                {activeTab === "hero" && (
                 <div className="space-y-6">
                   <h2 className="text-xl font-bold mb-4">Hero Bereich bearbeiten</h2>
                   
@@ -420,7 +426,8 @@ const AdminDashboard = () => {
                   </div>
                 </div>
               )}
-            </Card>
+              </Card>
+            )}
           </div>
         </div>
       </div>

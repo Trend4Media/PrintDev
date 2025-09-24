@@ -5,10 +5,17 @@ import { DTFPrinting } from "@/components/DTFPrinting";
 import { Fulfillment } from "@/components/Fulfillment";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { useAnalytics } from "@/hooks/useAnalytics";
 import { useEffect } from "react";
 
 const Index = () => {
+  const { trackPageVisit } = useAnalytics();
+
   useEffect(() => {
+    // Track page visit
+    trackPageVisit('/');
+    
+    // SEO: Add structured data for services
     // SEO: Add structured data for services
     const structuredData = {
       "@context": "https://schema.org",
