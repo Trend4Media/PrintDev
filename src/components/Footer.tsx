@@ -10,7 +10,7 @@ export const Footer = () => {
           {/* Company Info */}
           <div>
             <img 
-              src="/logo.jpg" 
+              src={`${import.meta.env.BASE_URL}logo.jpg`}
               alt="Printdev Logo" 
               className="h-8 w-auto mb-4 brightness-0 invert"
             />
@@ -76,8 +76,8 @@ export const Footer = () => {
                 </div>
               </div>
             </div>
-            <Button variant="quote" size="sm" className="mt-4 w-full">
-              Angebot anfordern
+            <Button variant="quote" size="sm" className="mt-4 w-full" asChild>
+              <a href="#angebot">Angebot anfordern</a>
             </Button>
           </div>
         </div>

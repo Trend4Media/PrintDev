@@ -11,9 +11,11 @@ export const Header = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-3">
             <img 
-              src="/logo.jpg" 
+              src={`${import.meta.env.BASE_URL}logo.jpg`}
               alt="Printdev Logo" 
               className="h-12 w-auto object-contain"
+              onLoad={() => console.log('Logo loaded successfully')}
+              onError={(e) => console.log('Logo failed to load:', e)}
             />
             <span className="text-xl font-bold text-foreground hidden sm:block">
               Printdev
@@ -34,8 +36,8 @@ export const Header = () => {
             <a href="#contact" className="text-foreground hover:text-printdev-cyan transition-colors">
               Kontakt
             </a>
-            <Button variant="quote" size="sm">
-              Angebot anfordern
+            <Button variant="quote" size="sm" asChild>
+              <a href="#angebot">Angebot anfordern</a>
             </Button>
           </nav>
 
@@ -80,8 +82,10 @@ export const Header = () => {
               >
                 Kontakt
               </a>
-              <Button variant="quote" size="sm" className="w-fit">
-                Angebot anfordern
+              <Button variant="quote" size="sm" className="w-fit" asChild>
+                <a href="#angebot" onClick={() => setIsMenuOpen(false)}>
+                  Angebot anfordern
+                </a>
               </Button>
             </nav>
           </div>

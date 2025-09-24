@@ -34,9 +34,11 @@ export const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <Button variant="quote" size="lg" className="text-lg">
-                Kostenloses Angebot anfordern
-                <ArrowRight className="ml-2" size={20} />
+              <Button variant="quote" size="lg" className="text-lg" asChild>
+                <a href="#angebot">
+                  Kostenloses Angebot anfordern
+                  <ArrowRight className="ml-2" size={20} />
+                </a>
               </Button>
               <Button variant="hero" size="lg" className="text-lg">
                 Services entdecken
