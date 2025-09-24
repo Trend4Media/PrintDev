@@ -1,22 +1,9 @@
 {
   "$schema": "https://railway.app/railway.schema.json",
   "build": {
-    "builder": "NIXPACKS",
-    "buildCommand": "npm ci && npm run build && cd server && npm install"
+    "builder": "DOCKERFILE"
   },
   "deploy": {
-    "startCommand": "cd server && npm start",
-    "healthcheckPath": "/api/health",
-    "healthcheckTimeout": 100,
-    "restartPolicyType": "ON_FAILURE",
-    "restartPolicyMaxRetries": 10
-  },
-  "environments": {
-    "production": {
-      "variables": {
-        "NODE_ENV": "production",
-        "FRONTEND_URL": "${{RAILWAY_PUBLIC_DOMAIN}}"
-      }
-    }
+    "healthcheckPath": "/api/health"
   }
 }
