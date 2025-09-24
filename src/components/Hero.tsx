@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap, Package, Clock } from "lucide-react";
+import { useAdmin } from "@/contexts/AdminContext";
 
 export const Hero = () => {
+  const { contentData } = useAdmin();
+  
   return (
     <section className="relative min-h-screen bg-gradient-hero flex items-center overflow-hidden">
       {/* Enhanced Background Layers */}
@@ -20,17 +23,11 @@ export const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              DTF Druck &{" "}
-              <span className="bg-gradient-brand bg-clip-text text-transparent">
-                Versand
-              </span>
-              <br />
-              Service
+              {contentData.hero.title}
             </h1>
             
             <p className="text-xl text-white/90 mb-8 max-w-2xl">
-              Professionelle DTF-Drucke in höchster Qualität mit schnellem Versand direkt zu Ihnen. 
-              Einfach, zuverlässig und termingerecht.
+              {contentData.hero.subtitle}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
