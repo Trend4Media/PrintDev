@@ -36,7 +36,7 @@ export const QuoteForm = () => {
             <FileText className="mx-auto mb-4 text-printdev-cyan" size={48} />
             <h2 className="text-4xl font-bold mb-4">Angebot anfordern</h2>
             <p className="text-xl text-muted-foreground">
-              Erhalten Sie ein individuelles Angebot für Ihre DTF-Druck oder Fulfillment-Anfrage
+              Erhalten Sie ein individuelles Angebot für Ihre DTF-Druck Anfrage
             </p>
           </div>
 

@@ -141,7 +141,7 @@ export const DTFPrinting = () => {
         {/* CTA */}
         <div className="text-center mt-12">
           <Button variant="brand" size="lg" asChild>
-            <a href="#angebot">DTF-Druck Angebot anfordern</a>
+            <a href="/angebot">DTF-Druck Angebot anfordern</a>
           </Button>
         </div>
       </div>
