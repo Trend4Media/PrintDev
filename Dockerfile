@@ -4,9 +4,9 @@ FROM node:18-alpine
 # Set working directory
 WORKDIR /app
 
-# Copy package files and install frontend dependencies
+# Copy package files and install ALL dependencies (including dev for build)
 COPY package*.json ./
-RUN npm ci --omit=dev
+RUN npm ci
 
 # Copy server package files and install backend dependencies  
 COPY server/package*.json ./server/
@@ -17,6 +17,9 @@ COPY . .
 
 # Build frontend
 RUN npm run build
+
+# Clean up dev dependencies after build
+RUN npm ci --omit=dev
 
 # Expose port
 EXPOSE 3000
