@@ -1,73 +1,123 @@
-# Welcome to your Lovable project
+# PrintDev - Professional DTF Printing Services
 
-## Project info
+Eine moderne React-Anwendung mit Express.js Backend, PostgreSQL Datenbank und umfassendem Analytics-System.
 
-**URL**: https://lovable.dev/projects/30694bfa-ece5-4727-be01-26b6e233f806
+## 🚂 Railway Deployment
 
-## How can I edit this code?
+Diese Anwendung ist für Railway optimiert und nutzt:
+- **Frontend**: React + Vite + TypeScript + Tailwind CSS
+- **Backend**: Express.js API Server
+- **Datenbank**: PostgreSQL mit Analytics-Tracking
+- **Domain**: Automatische Railway-Domain
 
-There are several ways of editing your application.
+### Automatisches Deployment
 
-**Use Lovable**
+Das Deployment erfolgt automatisch über Railway bei jedem Push:
+- ✅ Full-Stack Anwendung mit Backend
+- ✅ PostgreSQL Datenbank inklusive
+- ✅ Echte Analytics mit Datenpersistierung
+- ✅ Admin-CMS-System mit Datenbank-Backend
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/30694bfa-ece5-4727-be01-26b6e233f806) and start prompting.
+## 🛠️ Lokale Entwicklung
 
-Changes made via Lovable will be committed automatically to this repo.
+### Frontend + Backend zusammen:
+```bash
+# Dependencies installieren
+npm install
+cd server && npm install && cd ..
 
-**Use your preferred IDE**
+# Development Server starten (Frontend + Backend)
+npm run dev & npm run server:dev
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+# Frontend: http://localhost:5173
+# Backend API: http://localhost:3000
+```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### Nur Frontend:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Nur Backend:
+```bash
+cd server
+npm run dev
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 📦 Technologie-Stack
 
-**Use GitHub Codespaces**
+### Frontend:
+- **React 18** - UI Framework
+- **TypeScript** - Typisierte JavaScript-Superset
+- **Vite** - Build Tool und Development Server
+- **Tailwind CSS** - Utility-first CSS Framework
+- **ShadCN/UI** - UI Component Library
+- **React Router** - Client-side Routing
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Backend:
+- **Express.js** - Web Framework
+- **PostgreSQL** - Relationale Datenbank
+- **CORS** - Cross-Origin Requests
+- **Helmet** - Security Headers
+- **Morgan** - Request Logging
+- **Rate Limiting** - API Protection
 
-## What technologies are used for this project?
+## 🔧 Railway Setup-Anleitung
 
-This project is built with:
+### 1. Railway Account erstellen
+1. Gehen Sie zu [railway.app](https://railway.app)
+2. Registrieren Sie sich mit GitHub
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### 2. Neues Projekt erstellen
+1. **"New Project"** → **"Deploy from GitHub repo"**
+2. Repository **Trend4Media/PrintDev** auswählen
+3. **PostgreSQL** Datenbank hinzufügen
 
-## How can I deploy this project?
+### 3. Environment Variables setzen
+```
+NODE_ENV=production
+DATABASE_URL=postgresql://... (automatisch von Railway gesetzt)
+FRONTEND_URL=${{RAILWAY_PUBLIC_DOMAIN}}
+```
 
-Simply open [Lovable](https://lovable.dev/projects/30694bfa-ece5-4727-be01-26b6e233f806) and click on Share -> Publish.
+### 4. Database Setup
+Die Datenbank wird automatisch mit dem Schema in `server/database/init.sql` initialisiert.
 
-## Can I connect a custom domain to my Lovable project?
+## 📊 Admin-Features
 
-Yes, you can!
+### Analytics-Dashboard:
+- **URL**: https://your-domain.railway.app/#/admin
+- **Passwort**: `printdev2024`
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Features:
+- 📊 **Umfassende Analytics** - Besucher, Geräte, Browser, OS
+- 📝 **Content Management** - Alle Texte bearbeitbar
+- 📱 **Responsive Dashboard** - Mobile-optimiert
+- 🔒 **Sichere Authentifizierung** - Passwort-geschützt
+- 💾 **Datenbank-Persistierung** - Keine Datenverluste
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+### Analytics-Tracking:
+- Automatisches Tracking aller Seitenaufrufe
+- Geräte-Erkennung (Mobile, Tablet, Desktop)
+- Browser und Betriebssystem-Analyse
+- Traffic-Quellen und Referrer-Tracking
+- Echtzeit-Statistiken und historische Daten
+
+## 🌐 URLs nach Deployment
+
+- **Website**: https://your-project.railway.app/
+- **Angebot**: https://your-project.railway.app/#/angebot
+- **Admin**: https://your-project.railway.app/#/admin
+- **API Health**: https://your-project.railway.app/api/health
+
+## 🔐 Security Features
+
+- **Helmet.js** - Security headers
+- **Rate Limiting** - API abuse protection
+- **CORS** - Cross-origin request security
+- **Environment Variables** - Sensitive data protection
+- **SQL Injection Protection** - Parametrisierte Queries
+
+---
+
+*Powered by Railway - Full-Stack Deployment Platform*

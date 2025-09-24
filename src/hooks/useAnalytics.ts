@@ -28,8 +28,10 @@ export interface AnalyticsStats {
   recentVisits: AnalyticsData[];
 }
 
-const STORAGE_KEY = 'printdev-analytics';
 const SESSION_KEY = 'printdev-session';
+const API_BASE = process.env.NODE_ENV === 'production' 
+  ? '' // Same domain in production
+  : 'http://localhost:3000'; // Local development
 
 // Generate or get session ID
 const getSessionId = (): string => {
@@ -69,140 +71,75 @@ const getOS = (userAgent: string): string => {
 };
 
 export const useAnalytics = () => {
-  const [analyticsData, setAnalyticsData] = useState<AnalyticsData[]>([]);
+  const [analyticsStats, setAnalyticsStats] = useState<AnalyticsStats | null>(null);
 
-  // Load analytics data from localStorage
-  useEffect(() => {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved) {
-      try {
-        setAnalyticsData(JSON.parse(saved));
-      } catch (error) {
-        console.error('Error loading analytics data:', error);
-      }
+  // Track page visit via API
+  const trackPageVisit = async (page: string) => {
+    try {
+      const sessionId = getSessionId();
+      const screenResolution = `${screen.width}x${screen.height}`;
+      const referrer = document.referrer || 'Direct';
+      const language = navigator.language;
+
+      await fetch(`${API_BASE}/api/analytics/track`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          sessionId,
+          pagePath: page,
+          referrer,
+          language,
+          screenResolution
+        })
+      });
+    } catch (error) {
+      console.error('Error tracking page visit:', error);
     }
-  }, []);
-
-  // Track page visit
-  const trackPageVisit = (page: string) => {
-    const userAgent = navigator.userAgent;
-    const deviceType = getDeviceType(userAgent);
-    const browser = getBrowser(userAgent);
-    const os = getOS(userAgent);
-    const screenResolution = `${screen.width}x${screen.height}`;
-    const referrer = document.referrer || 'Direct';
-    const language = navigator.language;
-    const sessionId = getSessionId();
-
-    const visitData: AnalyticsData = {
-      timestamp: Date.now(),
-      page,
-      userAgent,
-      deviceType,
-      browser,
-      os,
-      screenResolution,
-      referrer,
-      language,
-      sessionId
-    };
-
-    setAnalyticsData(prev => {
-      const newData = [...prev, visitData];
-      // Keep only last 10000 entries to prevent storage overflow
-      const limitedData = newData.slice(-10000);
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(limitedData));
-      return limitedData;
-    });
   };
 
-  // Calculate statistics
-  const getStats = (): AnalyticsStats => {
-    const now = Date.now();
-    const today = new Date().toDateString();
-    const uniqueSessions = new Set(analyticsData.map(d => d.sessionId));
-
-    // Page views
-    const pageViews: { [key: string]: number } = {};
-    analyticsData.forEach(data => {
-      pageViews[data.page] = (pageViews[data.page] || 0) + 1;
-    });
-
-    // Device stats
-    const deviceStats: { [key: string]: number } = {};
-    analyticsData.forEach(data => {
-      deviceStats[data.deviceType] = (deviceStats[data.deviceType] || 0) + 1;
-    });
-
-    // Browser stats
-    const browserStats: { [key: string]: number } = {};
-    analyticsData.forEach(data => {
-      browserStats[data.browser] = (browserStats[data.browser] || 0) + 1;
-    });
-
-    // OS stats
-    const osStats: { [key: string]: number } = {};
-    analyticsData.forEach(data => {
-      osStats[data.os] = (osStats[data.os] || 0) + 1;
-    });
-
-    // Referrer stats
-    const referrerStats: { [key: string]: number } = {};
-    analyticsData.forEach(data => {
-      const ref = data.referrer === '' ? 'Direct' : data.referrer;
-      referrerStats[ref] = (referrerStats[ref] || 0) + 1;
-    });
-
-    // Hourly stats (last 24 hours)
-    const hourlyStats: { [key: string]: number } = {};
-    const last24h = now - (24 * 60 * 60 * 1000);
-    analyticsData
-      .filter(data => data.timestamp >= last24h)
-      .forEach(data => {
-        const hour = new Date(data.timestamp).getHours();
-        hourlyStats[hour] = (hourlyStats[hour] || 0) + 1;
-      });
-
-    // Daily stats (last 30 days)
-    const dailyStats: { [key: string]: number } = {};
-    const last30Days = now - (30 * 24 * 60 * 60 * 1000);
-    analyticsData
-      .filter(data => data.timestamp >= last30Days)
-      .forEach(data => {
-        const day = new Date(data.timestamp).toISOString().split('T')[0];
-        dailyStats[day] = (dailyStats[day] || 0) + 1;
-      });
-
-    // Today's visits
-    const todayVisits = analyticsData.filter(data => 
-      new Date(data.timestamp).toDateString() === today
-    ).length;
-
-    return {
-      totalVisits: analyticsData.length,
-      uniqueVisitors: uniqueSessions.size,
-      todayVisits,
-      pageViews,
-      deviceStats,
-      browserStats,
-      osStats,
-      referrerStats,
-      hourlyStats,
-      dailyStats,
-      recentVisits: analyticsData.slice(-50).reverse() // Last 50 visits
-    };
+  // Get statistics from API
+  const getStats = async (): Promise<AnalyticsStats> => {
+    try {
+      const response = await fetch(`${API_BASE}/api/analytics/stats`);
+      if (!response.ok) throw new Error('Failed to fetch stats');
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error('Error fetching stats:', error);
+      // Return empty stats as fallback
+      return {
+        totalVisits: 0,
+        uniqueVisitors: 0,
+        todayVisits: 0,
+        pageViews: {},
+        deviceStats: {},
+        browserStats: {},
+        osStats: {},
+        referrerStats: {},
+        hourlyStats: {},
+        dailyStats: {},
+        recentVisits: []
+      };
+    }
   };
 
-  // Clear analytics data
-  const clearAnalytics = () => {
-    setAnalyticsData([]);
-    localStorage.removeItem(STORAGE_KEY);
+  // Clear analytics data via API
+  const clearAnalytics = async () => {
+    try {
+      await fetch(`${API_BASE}/api/analytics/clear`, {
+        method: 'DELETE'
+      });
+    } catch (error) {
+      console.error('Error clearing analytics:', error);
+    }
   };
 
   return {
     trackPageVisit,
     getStats,
     clearAnalytics,
-    analyticsData
+    analyticsStats
   };
 };
