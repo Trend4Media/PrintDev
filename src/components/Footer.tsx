@@ -13,10 +13,6 @@ export const Footer = () => {
               src="/logo.jpg" 
               alt="Printdev Logo" 
               className="h-8 w-auto mb-4 brightness-0 invert"
-              onError={(e) => {
-                // Fallback to placeholder if logo fails to load
-                e.currentTarget.src = "/placeholder.svg";
-              }}
             />
             <p className="text-sm text-primary-foreground/80 mb-4">
               Ihr Partner für professionelle DTF-Drucke und komplette Fulfillment-Lösungen. 

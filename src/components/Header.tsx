@@ -9,16 +9,15 @@ export const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-3">
             <img 
               src="/logo.jpg" 
               alt="Printdev Logo" 
-              className="h-10 w-auto object-contain"
-              onError={(e) => {
-                // Fallback to placeholder if logo fails to load
-                e.currentTarget.src = "/placeholder.svg";
-              }}
+              className="h-12 w-auto object-contain"
             />
+            <span className="text-xl font-bold text-foreground hidden sm:block">
+              Printdev
+            </span>
           </div>
           
           {/* Desktop Navigation */}
