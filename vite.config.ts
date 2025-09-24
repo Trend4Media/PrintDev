@@ -9,7 +9,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  base: '/PrintDev/', // GitHub Pages base path
+  base: process.env.NODE_ENV === 'production' ? '/PrintDev/' : '/', // GitHub Pages base path
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {
